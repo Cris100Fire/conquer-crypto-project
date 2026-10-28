@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.about {
+  .profesor {
+    border: 2px solid grey;
+    padding: 32px 22px;
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      figure img {
+        width: 90px;
+        border-radius: 50%;
+        @include m.breakpoint(desktop) {
+          width: 120px;
+        }
+      }
+      section p {
+        font-weight: bold;
+        color: v.$job-color;
+      }
+    }
+  }
+}

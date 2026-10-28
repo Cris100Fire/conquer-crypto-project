@@ -1,0 +1,44 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.home {
+  .cursos,
+  .blogs {
+    @include m.breakpoint(tablethorizontal) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+}
+
+.about {
+  .team {
+    @include m.breakpoint(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    @include m.breakpoint(desktopxl) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+}
+
+.cursos section {
+  @include m.breakpoint(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    article:last-of-type {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+  }
+  @include m.breakpoint(desktopxl) {
+    margin: 0 auto;
+    gap: 3rem;
+  }
+}

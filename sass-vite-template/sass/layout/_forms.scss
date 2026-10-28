@@ -1,0 +1,56 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+form {
+  max-width: 600px;
+  margin-block: 3rem;
+  p {
+    margin-bottom: 1.4rem;
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #222;
+    }
+  }
+  input,
+  textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid v.$services-bg-color;
+    transition: all 0.25s ease;
+    outline: none;
+  }
+  textarea {
+    resize: vertical;
+  }
+  input:hover,
+  textarea:hover {
+    border-color: #bbb;
+  }
+  button {
+    border: none;
+    font-size: 16px;
+  }
+  input[type="file"] {
+    border: none;
+    padding: 0;
+    background: none;
+  }
+  input[type="file"]::file-selector-button,
+  input[type="date"] {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 0.8rem;
+    background-color: white;
+    color: v.$services-bg-color;
+    border: 1px solid v.$services-bg-color;
+    &:hover {
+      background: v.$gradient-color;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+header {
+  @include m.reset-list();
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  .logo img {
+    width: 200px;
+  }
+
+  #menu-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    &:checked ~ .nav {
+      max-height: 400px;
+    }
+  }
+
+  .menu-icon {
+    font-size: 2rem;
+    display: block;
+    cursor: pointer;
+  }
+}

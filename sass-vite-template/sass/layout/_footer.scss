@@ -1,0 +1,13 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+footer {
+  background: v.$gradient-color;
+  .footer__container {
+    padding-block: 20px;
+    color: white;
+    a {
+      color: white;
+    }
+  }
+}
